@@ -142,3 +142,5 @@ var vastUtil = {
     return !!mediaFile && mediaFile.apiFramework === 'VPAID';
   }
 };
+
+window.videojs_vast_vpaid=!0;

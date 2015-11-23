@@ -12,10 +12,10 @@
  * @param {Object=} options
  * @constructor
  */
-vjs.BlackPoster = vjs.Component.extend({
+var BlackPoster = videojs.extend(videojs.getComponent('Component'), {
   /** @constructor */
-  init: function(player, options){
-    vjs.Component.call(this, player, options);
+  constructor: function(player, options){
+    videojs.getComponent('Component').call(this, player, options);
 
     var posterImg = player.getChild('posterImage');
 
@@ -32,8 +32,10 @@ vjs.BlackPoster = vjs.Component.extend({
  * Create the black poster div element
  * @return {Element}
  */
-vjs.BlackPoster.prototype.createEl = function(){
-  return vjs.createEl('div', {
+BlackPoster.prototype.createEl = function () {
+  return videojs.getComponent('Component').prototype.createEl.call(this, 'div', {
     className: 'vjs-black-poster'
   });
 };
+
+videojs.registerComponent('BlackPoster', BlackPoster);

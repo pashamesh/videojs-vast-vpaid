@@ -43,7 +43,7 @@
   Below you have a simple ads-setup-plugin
 
   ```javascript
-  vjs.plugin('ads-setup', function (opts) {
+  videojs.plugin('ads-setup', function (opts) {
     var player = this;
     var adsCancelTimeout = 3000;
 
